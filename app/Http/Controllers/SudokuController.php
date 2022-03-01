@@ -29,11 +29,11 @@ class SudokuController extends Controller
     }
 
     /**
-     *
+     * Validate sudoku data
      */
     public function solve()
     {
-
+        //Valid data
         $validSudoku = [
             [7, 2, 6, 4, 9, 3, 8, 1, 5],
             [3, 1, 5, 7, 2, 8, 9, 4, 6],
@@ -45,7 +45,7 @@ class SudokuController extends Controller
             [5, 6, 7, 2, 1, 4, 3, 8, 9],
             [2, 3, 8, 5, 7, 9, 4, 6, 1],
         ];
-
+        //Invalid data
         $invalidSudoku = [
             [5, 3, 4, 6, 7, 8, 9, 1, 2],
             [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -57,7 +57,6 @@ class SudokuController extends Controller
             [2, 8, 7, 4, 1, 9, 6, 3, 5],
             [3, 4, 5, 2, 8, 6, 1, 7, 9],
         ];
-        $solved = $this->service->validate($validSudoku);
-        dd($solved);
+        return $this->service->validate($validSudoku);
     }
 }
